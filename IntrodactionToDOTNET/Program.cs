@@ -1,7 +1,11 @@
 ﻿//#define CONSOLE_CLASS
 //#define STRING_OPERATIONS
+//#define HARD_CHESS
+//#define GEOMETRIA
+#define CHESS_BOARD
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +58,250 @@ namespace IntrodactionToDOTNET
             Console.WriteLine($"{first_name}, {last_name}, {age}"); //Интерполяция строк  
 #endif
 
+#if HARD_CHESS
+            Console.Write("Введите размер шахматной доски: ");
+            int size_board = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите размер клетки шахматной доски: ");
+			int size = Convert.ToInt32(Console.ReadLine());
+
+			for (int i = 0; i < size_board; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    for(int j = 0; j < size; j++)
+                    {
+                        for(int z = 0; z < size_board; z++)
+                        {
+                            if(z % 2 == 0)
+                            {
+                                for (int x = 0; x < size; x++)
+                                {
+                                    Console.Write("* ");
+                                }
+                            }
+                            else
+                            {
+                                for (int x = 0; x < size; ++x)
+                                {
+									Console.Write("  ");
+								}
+                            }
+                        }
+                        Console.WriteLine();
+                    }
+                }
+                else
+                {
+                    for(int j = 0; j < size; ++j)
+                    {
+                        for (int z = 0; z < size_board; ++z)
+                        {
+                            if (z % 2 == 0)
+                            {
+                                for (int x = 0; x < size; ++x)
+                                {
+									Console.Write("  ");
+								}
+                            }
+                            else
+                            {
+								for (int x = 0; x < size; ++x)
+								{
+									Console.Write("* ");
+								}
+							}
+                        }
+						Console.WriteLine();
+					}
+                }
+            }
+#endif
+#if GEOMETRIA
+			Console.Write("Укажите размер фигуры: ");
+			int size = Convert.ToInt32(Console.ReadLine());
+
+			Console.WriteLine();
+			for (int y = 0; y < size; y++)
+			{
+				for (int x = 0; x < size; x++)
+				{
+					Console.Write("*");
+				}
+				Console.WriteLine();
+			}
+
+            Console.WriteLine();
+
+			for (int y = 0; y < size; y++)
+            {
+                for(int x = 0; x < size; x++)
+                {
+                    if(y>=x)
+                    {
+						Console.Write("*");
+					}
+                    else
+                    {
+						Console.Write(" ");
+					}
+                }
+                Console.WriteLine();
+            }
+			Console.WriteLine();
+
+            for(int y = 0; y < size; y++)
+            {
+                for(int x = 0; x <size - y; x++)
+                {
+					Console.Write("*");
+				}
+				Console.WriteLine();
+			}
+
+			Console.WriteLine();
+
+			for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    if(x>=y)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+
+			Console.WriteLine();
+
+            for(int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+					if (y+x >= size - 1)
+					{
+						Console.Write("*");
+					}
+					else
+					{
+						Console.Write(" ");
+					}
+				}
+				Console.WriteLine();
+			}
+			Console.WriteLine();
+
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = y; x < size; x++)
+                {
+					Console.Write(" ");
+				}
+				Console.Write("/");
+                for (int x = 0; x < y * 2; x++)
+                {
+					Console.Write(" ");
+				}
+				Console.Write("\\");
+				Console.WriteLine();
+			}
+            for (int y = 0; y < size; y++)
+            {
+                for(int x = 0; x <= y; x++)
+                {
+					Console.Write(" ");
+				}
+				Console.Write("\\");
+                for (int x = (y + 1) * 2; x < size * 2; x++)
+                {
+					Console.Write(" ");
+				}
+				Console.Write("/");
+				Console.WriteLine();
+			}
+
+			Console.WriteLine();
+
+			for (int y = 0; y < size; y++)
+			{
+				for (int x = 0; x < size; x++)
+				{
+					if ((x+y) % 2 == 0)
+					{
+						Console.Write("+ ");
+					}
+					else
+					{
+						Console.Write("- ");
+					}
+				}
+				Console.WriteLine();
+			}
+			Console.WriteLine();
+#endif
+#if CHESS_BOARD
+            Console.Write("Введите размер шахматной доски: ");
+            int size_board = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите размер клетки шахматной доски: ");
+			int size = Convert.ToInt32(Console.ReadLine());
+
+            //for (int i = 0; i < size_board; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        for (int j = 0; j < size; j++)
+            //        {
+            //            for (int z = 0; z < size_board; z++)
+            //            {
+            //                if (z % 2 == 0)
+            //                {
+            //                    for (int x = 0; x < size; x++)
+            //                    {
+
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    for (int x = 0; x < size; ++x)
+            //                    {
+
+            //                    }
+            //                }
+            //            }
+            //            Console.WriteLine();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        for (int j = 0; j < size; ++j)
+            //        {
+            //            for (int z = 0; z < size_board; ++z)
+            //            {
+            //                if (z % 2 == 0)
+            //                {
+            //                    for (int x = 0; x < size; ++x)
+            //                    {
+
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    for (int x = 0; x < size; ++x)
+            //                    {
+
+            //                    }
+            //                }
+            //            }
+            //            Console.WriteLine();
+            //        }
+            //    }
+            //}
+#endif
 
         }
-    }
+	}
 }
