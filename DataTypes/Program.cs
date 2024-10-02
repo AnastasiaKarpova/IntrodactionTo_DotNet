@@ -1,4 +1,8 @@
-﻿using System;
+﻿//#define DATATYPES
+//#define FACTORIAL
+#define LONG_ARITHMETICAL 
+#define CALCULATOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +15,7 @@ namespace DataTypes
 		static readonly string delimiter = "\n-----------------------------------------\n";
 		static void Main(string[] args)
 		{
+#if DATATYPES
 			Console.WriteLine("Hello DataTypes");
 			//Console.WriteLine(sizeof(bool));
 			//Console.WriteLine(true);
@@ -62,6 +67,61 @@ namespace DataTypes
 				
 			}
 			Console.WriteLine("Вот и сказочке конец");
+#endif
+#if FACTORIAL
+			int num;
+			int fact = 1;
+
+			Console.WriteLine("Введите число: ");
+			num = Convert.ToInt32(Console.ReadLine());
+			//num = int.Parse(Console.ReadLine());
+
+			for(int i = 1; i <= num; i++)
+				fact = fact * i;
+			Console.WriteLine("Факториал " + num + " равен: " + fact);
+			Console.ReadLine();
+#endif
+#if LONG_ARITHMETICAL
+
+#endif
+#if CALCULATOR
+			double a, b, result;
+			char operation;
+			Console.Write("Введите первое число: ");
+			a = Convert.ToDouble(Console.ReadLine());
+			Console.Write("Укажите операцию (+, -, *, /): ");
+			operation = Convert.ToChar(Console.ReadLine());
+			Console.Write("Введите второе число: ");
+			b = Convert.ToDouble(Console.ReadLine());
+			Console.WriteLine();
+
+			if(operation == '+')
+			{
+				result = a + b;
+				Console.WriteLine(a + " + " + b + " = " + result);
+			}
+			else if(operation == '-')
+			{
+				result = a - b;
+				Console.WriteLine(a + " - " + b + " = " + result);
+			}
+			else if(operation == '*')
+			{
+				result = a * b;
+				Console.WriteLine(a + " * " + b + " = " + result);
+			}
+			else if(operation== '/')
+			{
+				result = a / b;
+				Console.WriteLine(a + " / " + b + " = " + result);
+			}
+			else
+			{
+				Console.WriteLine("Введен не правильный знак!");
+			}
+
+#endif
+
 		}
 	}
 }
