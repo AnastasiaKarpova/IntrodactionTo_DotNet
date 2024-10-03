@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factorial", "Factorial\Fact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{5D7F8D24-4C69-43B8-B445-840BA68649EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snack", "Snack\Snack.csproj", "{C8E04EC3-D177-4AA7-9CAE-EF82D7C4F126}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5D7F8D24-4C69-43B8-B445-840BA68649EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D7F8D24-4C69-43B8-B445-840BA68649EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D7F8D24-4C69-43B8-B445-840BA68649EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E04EC3-D177-4AA7-9CAE-EF82D7C4F126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E04EC3-D177-4AA7-9CAE-EF82D7C4F126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E04EC3-D177-4AA7-9CAE-EF82D7C4F126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E04EC3-D177-4AA7-9CAE-EF82D7C4F126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
