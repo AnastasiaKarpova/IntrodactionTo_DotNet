@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factorial", "Factorial\Factorial.csproj", "{D4D57205-F6F6-4D7F-AE31-A713487997F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calc\Calc.csproj", "{5D7F8D24-4C69-43B8-B445-840BA68649EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D4D57205-F6F6-4D7F-AE31-A713487997F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4D57205-F6F6-4D7F-AE31-A713487997F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4D57205-F6F6-4D7F-AE31-A713487997F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D7F8D24-4C69-43B8-B445-840BA68649EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D7F8D24-4C69-43B8-B445-840BA68649EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D7F8D24-4C69-43B8-B445-840BA68649EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D7F8D24-4C69-43B8-B445-840BA68649EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
