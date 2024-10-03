@@ -1,7 +1,7 @@
 ﻿//#define DATATYPES
 //#define FACTORIAL
-#define LONG_ARITHMETICAL 
-#define CALCULATOR
+#define LONG_ARITHMETIC 
+//#define CALCULATOR
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,7 +81,7 @@ namespace DataTypes
 			Console.WriteLine("Факториал " + num + " равен: " + fact);
 			Console.ReadLine();
 #endif
-#if LONG_ARITHMETICAL
+#if LONG_ARITHMETIC
 
 #endif
 #if CALCULATOR
