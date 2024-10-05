@@ -10,12 +10,26 @@ namespace Snack
 	{
 		static void Main(string[] args)
 		{
-			char key;
+			int x = 5, y = 5;
+			//Console.WriteLine($"{x}, {y}");
+			Console.SetCursorPosition(x, y);
+			//char key;
+			ConsoleKey symbol;
 			do
 			{
-				key = Console.ReadKey(true).KeyChar;
-				Console.WriteLine($"{(int)key}\t{key}");
-			} while (true);
+				
+				//key = Console.ReadKey(true).KeyChar;
+				symbol = Console.ReadKey(true).Key;
+				//Console.WriteLine($"{(int)key}\t{key}");
+				switch(symbol)
+				{
+					case ConsoleKey.W: y--; break;
+					case ConsoleKey.A: x--; break;
+					case ConsoleKey.S: y++; break;
+					case ConsoleKey.D: x++; break;
+				}
+				Console.SetCursorPosition(x, y);
+			} while (/*true*/symbol != ConsoleKey.Escape);
 		}
 	}
 }
