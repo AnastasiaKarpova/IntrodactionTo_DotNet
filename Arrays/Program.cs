@@ -1,6 +1,6 @@
 ﻿//#define ARRAYS_1
-#define ARRAYS_2
-//#define JAGGED_ARRAYS
+//#define ARRAYS_2
+#define JAGGED_ARRAYS
 
 using System;
 using System.Collections.Generic;
@@ -150,7 +150,7 @@ namespace Arrays
 				{
 					for (int k = i; k < i_arr_2.GetLength(0); k++)
 					{
-						for (int l = k = i ? j + 1 : 0; l < i_arr_2.GetLength(1); l++)
+						for (int l = k == i ? j + 1 : 0; l < i_arr_2.GetLength(1); l++)
 						{
 							if (i_arr_2[k,l] < i_arr_2[i,j])
 							{
@@ -217,21 +217,21 @@ namespace Arrays
 			Console.WriteLine("Среднее арифметическое: " + sum / arr_jagged.Length);
 			for(int i = 0; i < arr_jagged.Length; i++)
 			{
-			for (int j = 0; j < arr_jagged[i].Length; j++)
-			{
-			for (int k = i; k < arr_jagged.Length; k++)
-			{
-			for(int l = k = i ? j + 1 : 0; l < arr_jagged[k].Length; l++)
-			{
-			if(arr_jagged[k][l] < arr_jagged[i][j])
-			{
-			int buffer = arr_jagged[i][j];
-			arr_jagged[i][j] = arr_jagged[k][l];
-			arr_jagged[k][l] = buffer;
-			}
-			}
-			}
-			}
+				for (int j = 0; j < arr_jagged[i].Length; j++)
+				{
+					for (int k = i; k < arr_jagged.Length; k++)
+					{
+						for(int l = k == i ? j + 1 : 0; l < arr_jagged[k].Length; l++)
+						{
+							if(arr_jagged[k][l] < arr_jagged[i][j])
+							{
+								int buffer = arr_jagged[i][j];
+								arr_jagged[i][j] = arr_jagged[k][l];
+								arr_jagged[k][l] = buffer;
+							}
+						}
+					}
+				}
 			}
 			Console.WriteLine();
 			for (int i = 0; i <arr_jagged.Length;i++)
