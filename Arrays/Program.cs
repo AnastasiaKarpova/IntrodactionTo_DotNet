@@ -1,6 +1,6 @@
 ﻿//#define ARRAYS_1
-//#define ARRAYS_2
-#define JAGGED_ARRAYS
+#define ARRAYS_2
+//#define JAGGED_ARRAYS
 
 using System;
 using System.Collections.Generic;
@@ -141,9 +141,40 @@ namespace Arrays
 			Console.WriteLine("Сумма: " + sum);
 			Console.WriteLine("Среднее арифметическое: " + sum / i_arr_2.Length);
 			Console.WriteLine();
+			//Comperer<int> comperer = Comperer<int>.Default;
+			//Array.Sort<int[,]>(i_arr_2, (x,y)=> comperer.Compare(x[i_arr_2.GetLength(0), i_arr_2.GetLength(1)], y[2]));
+			//Array.Sort(i_arr_2.Cast<int>().ToArray());
+			for (int i = 0; i < i_arr_2.GetLength(0); i++)
+			{
+				for (int j = 0; j < i_arr_2.GetLength(1); j++)
+				{
+					for (int k = i; k < i_arr_2.GetLength(0); k++)
+					{
+						for (int l = k = i ? j + 1 : 0; l < i_arr_2.GetLength(1); l++)
+						{
+							if (i_arr_2[k,l] < i_arr_2[i,j])
+							{
+								int buffer = i_arr_2[i,j];
+								i_arr_2[i,j] = i_arr_2[k,l];
+								i_arr_2[k,l] = buffer;
+							}
+						}
+					}
+				}
+			}
+			Console.WriteLine();
+			for (int i = 0; i < i_arr_2.GetLength(0); i++)
+			{
+				for (int j = 0; j < i_arr_2.GetLength(1); j++)
+				{
+					Console.Write(i_arr_2[i, j] + "\t");
+				}
+				Console.WriteLine();
+			}
+
 #endif
 #if JAGGED_ARRAYS
-			
+
 			int[][] arr_jagged = new int[][]
 			{
 				new int[]{0, 1, 1, 2 },
@@ -184,6 +215,34 @@ namespace Arrays
 			}
 			Console.WriteLine("Сумма: " + sum);
 			Console.WriteLine("Среднее арифметическое: " + sum / arr_jagged.Length);
+			for(int i = 0; i < arr_jagged.Length; i++)
+			{
+			for (int j = 0; j < arr_jagged[i].Length; j++)
+			{
+			for (int k = i; k < arr_jagged.Length; k++)
+			{
+			for(int l = k = i ? j + 1 : 0; l < arr_jagged[k].Length; l++)
+			{
+			if(arr_jagged[k][l] < arr_jagged[i][j])
+			{
+			int buffer = arr_jagged[i][j];
+			arr_jagged[i][j] = arr_jagged[k][l];
+			arr_jagged[k][l] = buffer;
+			}
+			}
+			}
+			}
+			}
+			Console.WriteLine();
+			for (int i = 0; i <arr_jagged.Length;i++)
+			{
+				for(int j = 0; j < arr_jagged[i].Length; j++)
+				{
+					Console.Write(arr_jagged[i][j] + "\t");
+				}
+				Console.WriteLine();
+			}
+			Console.WriteLine();
 #endif
 
 		}
